@@ -3,6 +3,8 @@ A culinary student's dream! This is a Flash Card game made in python that scrape
 At the end of each session, it sends the user a summary - the words they learnt and the number of words they are yet to go through, by an SMS sent with [Twilio](https://www.twilio.com/).  
 
 ## Screenshots 
+![term_ss](https://user-images.githubusercontent.com/87208681/194726706-77636710-92b8-45d2-98ff-f8f0c894ebb5.jpg)
+![desc_ss](https://user-images.githubusercontent.com/87208681/194726693-99ef38bd-b19a-4130-8aa0-60494c261c32.png)
 
 
 ## API

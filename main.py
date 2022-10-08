@@ -20,6 +20,9 @@ current_card_num = 0
 # holds the serial number of the terms to be learnt
 to_learn = []
 
+# holds the terms learnt in this session
+learnt_terms = []
+
 file1 = open("data/terms_to_learn.txt", "r")
 contents_to_learn = file1.readlines()
 file1.close()
@@ -77,7 +80,8 @@ def flip_card():
 
 
 def is_known():
-    global to_learn, current_card_num
+    global to_learn, current_card_num, learnt_terms, all_terms
+    learnt_terms.append(all_terms[current_card_num])
     to_learn.remove(current_card_num)
     print("Number of terms yet to learn: ", len(to_learn))
     with open("data/terms_to_learn.txt", "w") as fp:
@@ -116,10 +120,13 @@ window.mainloop()
 
 num_terms_to_learn = len(to_learn)
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+learnt_words = ""
+for term in learnt_terms:
+    learnt_words += term + ","
 
 message = client.messages.create(
-    body=f"There are only {num_terms_to_learn} terms left. Keep up the learning!😄",
+    body=f"You learnt {learnt_words[:-1]} today. There are only {num_terms_to_learn} terms left. Keep up the learning!😄",
     from_=SENDERS_NUMBER,
     to=RECEIVERS_NUMBER,
 )
-print(message.status)
+print("Message status: " + message.status)

@@ -17,7 +17,8 @@ At the end of each session, it sends the user a summary - the words they learnt 
 [The Scramble](https://www.thescramble.com/glossary-of-cooking-terms/)
 
 ## Tools
-[Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/#)
+- [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/#)
+- [tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter)
 
 ## Environment Variables
 To run this project, you will need to add the following environment variables to your .env file
